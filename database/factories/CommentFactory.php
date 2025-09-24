@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Comment;
+use App\Models\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Comment>
+ * @extends Factory<Comment>
  */
 class CommentFactory extends Factory
 {
@@ -17,7 +19,10 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'body' => $this->faker->sentence(),
+            'task_id' => Task::factory(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

@@ -22,7 +22,7 @@ class TaskFactory extends Factory
             'title' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(),
             'status' => $this->faker->randomElement(['pending', 'in_progress', 'done']),
-            'due_date' => $this->faker->optional()->dateTimeBetween('now', '+1 year'),
+            'due_date' => $this->faker->dateTimeBetween('now', '+1 year'),
             'project_id' => Project::factory(),
             'created_at' => now(),
             'updated_at' => now(),

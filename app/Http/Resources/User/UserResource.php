@@ -32,6 +32,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'email_verified_at' => $this->email_verified_at,
+            'token' => $this->token ?? null,
             'role' => $this->role,
             'phone' => $this->phone,
             'projects' => ProjectResource::collection($this->whenLoaded('projects')),

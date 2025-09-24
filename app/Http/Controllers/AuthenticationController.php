@@ -6,7 +6,7 @@ use App\Enums\RoleEnum;
 use App\Http\Requests\Authentication\LoginRequest;
 use App\Http\Requests\Authentication\RegistrationRequest;
 use App\Http\Resources\User\UserResource;
-use App\Service\User\UserService;
+use App\Service\UserService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Response;
 

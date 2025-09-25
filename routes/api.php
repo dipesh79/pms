@@ -17,7 +17,7 @@ Route::controller(AuthenticationController::class)->group(function () {
     Route::get('/me', 'me')->middleware('auth:sanctum');
 });
 
-Route::group(['middleware' => 'auth:sanctum'], function () {
+Route::group(['middleware' => ['auth:sanctum','userLog']], function () {
     // Projects
     Route::apiResource('projects', ProjectController::class);
 

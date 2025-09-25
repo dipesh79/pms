@@ -57,7 +57,15 @@ class TaskStoreRequest extends FormRequest
              *
              * @example "2023-12-31"
              */
-            'due_date' => ['required', 'date', 'after_or_equal:today']
+            'due_date' => ['required', 'date', 'after_or_equal:today'],
+            /**
+             * Assigned user ID for the task.
+             *
+             * @var int $user_id
+             *
+             * @example 5
+             */
+            'user_id' => ['required', 'integer', 'exists:users,id'],
         ];
     }
 }

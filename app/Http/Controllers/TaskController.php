@@ -61,7 +61,6 @@ class TaskController extends Controller
         try {
             $data = $request->validated();
             // Assign the authenticated user's ID to the task
-            $data['user_id'] = auth()->id();
             $data['project_id'] = $project->id;
             $task = $this->taskService->createTask($data);
             $response = new TaskResource($task);

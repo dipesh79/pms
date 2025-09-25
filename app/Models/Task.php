@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use App\Contract\FlushesCache;
+use App\Observers\TaskObserver;
 use Database\Factories\TaskFactory;
 use Dipesh79\LaravelHelpers\Traits\Filterable;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+#[ObservedBy(TaskObserver::class)]
 class Task extends Model
 {
     /** @use HasFactory<TaskFactory> */
